@@ -118,10 +118,10 @@ const exampleBlocks: ReactElement[] = [
                 The circle has a radius of{" "}
                 <InlineScrubbleNumber
                     varName="radius"
-                    defaultValue={5}
+                    defaultValue={2}
                     min={1}
-                    max={20}
-                    step={0.5}
+                    max={10}
+                    step={1}
                 />
                 {" "}units, giving it an area proportional to r².
             </EditableParagraph>
