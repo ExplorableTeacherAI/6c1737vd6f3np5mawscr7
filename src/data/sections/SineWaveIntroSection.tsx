@@ -81,31 +81,31 @@ const UnitCircleSineViz = () => {
                 <Line.Segment
                     point1={[cx, cy]}
                     point2={[1.5, cy]}
-                    color="#ef4444"
+                    color="#94a3b8"
                     weight={1}
                     style="dashed"
-                    opacity={0.4}
+                    opacity={0.3}
                 />
 
-                {/* Sine wave curve */}
+                {/* Sine wave curve — offset so x=1.5 corresponds to angle=0 */}
                 <Plot.OfX
-                    y={(x) => Math.sin(x)}
+                    y={(x) => Math.sin(x - 1.5)}
                     color="#3b82f6"
                     weight={2.5}
                     domain={[1.5, 8]}
                 />
 
-                {/* Moving point on the sine wave that corresponds to the angle */}
+                {/* Moving point on the sine wave that corresponds to the current angle */}
                 <Point
                     x={angleRad + 1.5}
-                    y={Math.sin(angleRad)}
+                    y={cy}
                     color="#ef4444"
                 />
 
                 {/* Vertical line at angle position on wave */}
                 <Line.Segment
                     point1={[angleRad + 1.5, 0]}
-                    point2={[angleRad + 1.5, Math.sin(angleRad)]}
+                    point2={[angleRad + 1.5, cy]}
                     color="#ef4444"
                     weight={1.5}
                     style="dashed"
